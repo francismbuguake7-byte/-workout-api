@@ -8,8 +8,6 @@ from schemas import WorkoutExerciseSchema
 we_bp = Blueprint('workout_exercises', __name__)
 schema = WorkoutExerciseSchema()
 many_schema = WorkoutExerciseSchema(many=True)
-
-
 def save_or_rollback():
     try:
         db.session.commit()
