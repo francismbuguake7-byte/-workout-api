@@ -2,7 +2,7 @@ from marshmallow import Schema, fields, validate
 
 
 class WorkoutExerciseSchema(Schema):
-    """Serialize/deserialize join rows, nesting workout and exercise."""
+   
 
     id = fields.Int(dump_only=True)
     workout_id = fields.Int()

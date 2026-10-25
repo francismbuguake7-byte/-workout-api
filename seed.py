@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-"""Reset the database and insert a small set of example records."""
+
 from datetime import date
 
 from app import app
@@ -8,7 +7,7 @@ from models import Exercise, Workout, WorkoutExercise, db
 
 def run():
     with app.app_context():
-        # Clear existing data (children first) so seeding is idempotent.
+       
         WorkoutExercise.query.delete()
         Workout.query.delete()
         Exercise.query.delete()

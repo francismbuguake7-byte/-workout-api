@@ -8,7 +8,7 @@ migrate = Migrate()
 
 
 def create_app(test_config=None):
-    """Create and configure the Flask application."""
+    
     app = Flask(__name__)
     app.config.from_mapping(
         SQLALCHEMY_DATABASE_URI='sqlite:///app.db',
