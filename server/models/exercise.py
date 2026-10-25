@@ -1,7 +1,7 @@
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.orm import validates
 
-from models import db
+from server.models import db
 
 CATEGORIES = ['strength', 'cardio', 'flexibility', 'balance']
 

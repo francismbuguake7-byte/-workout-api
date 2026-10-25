@@ -1,14 +1,13 @@
 from flask import Flask
 from flask_migrate import Migrate
 
-from models import db
-from routes import register_routes
+from server.models import db
+from server.routes import register_routes
 
 migrate = Migrate()
 
 
 def create_app(test_config=None):
-    
     app = Flask(__name__)
     app.config.from_mapping(
         SQLALCHEMY_DATABASE_URI='sqlite:///app.db',
@@ -21,6 +20,9 @@ def create_app(test_config=None):
     db.init_app(app)
     migrate.init_app(app, db)
     register_routes(app)
+
+    with app.app_context():
+        db.create_all()
 
     @app.get('/')
     def index():

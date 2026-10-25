@@ -2,8 +2,8 @@ from flask import Blueprint, request
 from marshmallow import ValidationError
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
-from models import Exercise, Workout, WorkoutExercise, db
-from schemas import WorkoutExerciseSchema
+from server.models import Exercise, Workout, WorkoutExercise, db
+from server.schemas import WorkoutExerciseSchema
 
 we_bp = Blueprint('workout_exercises', __name__)
 schema = WorkoutExerciseSchema()
